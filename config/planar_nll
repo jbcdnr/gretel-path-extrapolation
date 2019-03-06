@@ -1,0 +1,69 @@
+
+
+[data]
+
+name = planar-lr.1-interpolation-nb-nll
+workspace = ../workspace
+dataset = mesh
+input_directory = planar
+max_trajectory_length = 40
+min_trajectory_length = 6
+extract_coord_features = true
+
+k_closest_nodes = 5
+
+[training]
+
+; can be SGD, RMSprop or Adam
+optimizer = Adam
+
+; can be RMSE, target_only, dot_loss, start_target_only, nll_loss
+loss = nll_loss
+
+; device can be cpu or cuda:0
+device = cuda:0
+
+lr = .1
+momentum = 0.5
+batch_size = 5
+train_test_ratio = 0.8/0.2
+
+; train and test only on the first trajectory (requires batch_size=1)
+overfit1 = False
+
+shuffle_samples = True
+number_epoch = 31
+seed = 0
+patience = 8
+
+[model]
+
+number_observations = 5
+self_loop_deadend_only = true
+self_loop_weight = 0.01
+diffusion_k_hops = 20
+diffusion_hidden_dimension = 1
+parametrized_diffusion = false
+initial_edge_transformer = false
+use_shortest_path_distance = false
+
+rw_max_steps = -1
+rw_expected_steps = true
+rw_edge_weight_see_number_step = False  ; deprecated
+with_interpolation = true
+
+; next, destination, start_to_target
+target_prediction = next
+latent_transformer_see_target = false
+rw_non_backtracking = False
+double_way_diffusion = False
+
+[logging]
+
+compute_baseline = false
+
+[checkpoint]
+enable_checkpointing = True
+checkpoint_directory = chkpt
+chechpoint_every_num_epoch = 5
+restore_from_checkpoint = false

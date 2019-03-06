@@ -1,0 +1,68 @@
+
+
+[data]
+
+name = gps-lr.01-nb-log-target
+workspace = ../workspace
+dataset = gps
+input_directory = gps
+max_trajectory_length = 40
+min_trajectory_length = 6
+
+k_closest_nodes = 5
+extract_coord_features = true
+
+
+
+[training]
+
+; can be SGD, RMSprop or Adam
+optimizer = Adam
+
+; can be RMSE, target_only, dot_loss, start_target_only, nll_loss
+loss = log_dot_loss
+
+; device can be cpu or cuda:0
+device = cuda:0
+
+lr = .01
+momentum = 0.5
+batch_size = 5
+patience = 1000
+
+; train and test only on the first trajectory (requires batch_size=1)
+overfit1 = false
+
+shuffle_samples = True
+number_epoch = 201
+seed = 0
+train_test_ratio = 0.8/0.2
+
+[model]
+
+number_observations = 5
+self_loop_deadend_only = true
+self_loop_weight = 0.01
+diffusion_k_hops = 60
+diffusion_hidden_dimension = 1
+parametrized_diffusion = false
+; next or destination
+target_prediction = next
+latent_transformer_see_target = false
+initial_edge_transformer = false
+double_way_diffusion = false
+
+rw_max_steps = -1
+rw_expected_steps = true
+rw_edge_weight_see_number_step = False
+with_interpolation = False
+use_shortest_path_distance = false
+rw_non_backtracking = true
+diffusion_self_loops = true
+
+[checkpoint]
+enable_checkpointing = True
+checkpoint_directory = chkpt
+chechpoint_every_num_epoch = 5
+restore_from_checkpoint = false
+compute_baseline = false

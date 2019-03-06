@@ -1,0 +1,69 @@
+
+
+[data]
+
+name = wikispeedia-target
+workspace = ../workspace
+dataset = wikispeedia
+input_directory = wikispeedia
+max_trajectory_length = 7
+min_trajectory_length = 5
+
+k_closest_nodes = 5
+extract_coord_features = false
+
+[training]
+
+; can be SGD, RMSprop or Adam
+optimizer = Adam
+
+; can be RMSE, target_only, dot_loss,
+loss = log_dot_loss
+
+; device can be cpu or cuda:0
+device = cuda:0
+
+lr = .1
+momentum = 0.5
+batch_size = 10
+
+; train and test only on the first trajectory (requires batch_size=1)
+overfit1 = False
+
+shuffle_samples = True
+number_epoch = 5
+seed = 0
+train_test_ratio = 0.8/0.2
+patience = 10
+
+[model]
+
+number_observations = 4
+self_loop_deadend_only = true
+self_loop_weight = 0.01
+diffusion_k_hops = 5
+diffusion_hidden_dimension = 1
+parametrized_diffusion = false
+; next, destination, start_to_target
+target_prediction = start_to_target
+
+latent_transformer_see_target = false
+
+rw_max_steps = -1
+rw_expected_steps = true
+rw_edge_weight_see_number_step = False
+with_interpolation = false
+initial_edge_transformer = True
+use_shortest_path_distance = False
+double_way_diffusion = False
+rw_non_backtracking = false
+diffusion_self_loops = true
+
+[logging]
+compute_baseline = false
+
+[checkpoint]
+enable_checkpointing = True
+checkpoint_directory = chkpt
+chechpoint_every_num_epoch = 1
+restore_from_checkpoint = false

@@ -1,6 +1,8 @@
 # Gretel
 
-Implementation of the paper [Extrapolating paths with graph neural networks TODO link](), 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2597008.svg)](https://doi.org/10.5281/zenodo.2597008)
+
+Implementation of the paper [Extrapolating paths with graph neural networks TODO link](),
 
 by Jean-Baptiste Cordonnier and Andreas Loukas.
 
@@ -21,7 +23,9 @@ Our main contribution is a graph neural network called Gretel. Conditioned on a 
 
 Install a conda environment and the dependencies with `./create_env.sh env_name`.
 
-You can format your own data following the format defined in `main.py:load_data()` documentation or you can download our dataset from [here](https://drive.switch.ch/index.php/s/Ubblvuoxl1EuiLQ).
+Data can be downloaded from [zenodo](https://zenodo.org/record/2597008#.XI9kZS3MzOQ) and is contained in `workspace.zip`.
+
+You can format your own data following the format defined in `main.py:load_data()` documentation.
 
 ### Directory structure
 

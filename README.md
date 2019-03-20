@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2597008.svg)](https://doi.org/10.5281/zenodo.2597008)
 
-Implementation of the paper [Extrapolating paths with graph neural networks TODO link](),
+Implementation of the paper [Extrapolating paths with graph neural networks](http://arxiv.org/abs/1903.07518),
 
 by Jean-Baptiste Cordonnier and Andreas Loukas.
 
@@ -54,6 +54,18 @@ python main.py config/wiki...
 
 ## Reference
 
+If you find this useful, please consider citing the following:
+
 ```
-TODO arxiv Bibtex
+@article{DBLP:journals/corr/abs-1903-07518,
+  author    = {Jean-Baptiste Cordonnier and Andreas Loukas},
+  title     = {Extrapolating paths with graph neural networks},
+  journal   = {CoRR},
+  volume    = {abs/1903.07518},
+  year      = {2019},
+  url       = {https://arxiv.org/abs/1903.07518},
+  archivePrefix = {arXiv},
+  eprint    = {1903.07518},
+  timestamp = {Mon, 18 Mar 2019 15:47:28 UTC},
+}
 ```

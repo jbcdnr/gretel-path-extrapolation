@@ -57,15 +57,15 @@ python main.py config/wiki...
 If you find this useful, please consider citing the following:
 
 ```
-@article{DBLP:journals/corr/abs-1903-07518,
-  author    = {Jean-Baptiste Cordonnier and Andreas Loukas},
-  title     = {Extrapolating paths with graph neural networks},
-  journal   = {CoRR},
-  volume    = {abs/1903.07518},
-  year      = {2019},
-  url       = {https://arxiv.org/abs/1903.07518},
-  archivePrefix = {arXiv},
-  eprint    = {1903.07518},
-  timestamp = {Mon, 18 Mar 2019 15:47:28 UTC},
+@inproceedings{ijcai2019-303,
+   title     = {Extrapolating Paths with Graph Neural Networks},
+   author    = {Cordonnier, Jean-Baptiste and Loukas, Andreas},
+   booktitle = {Proceedings of the Twenty-Eighth International Joint Conference on Artificial Intelligence, {IJCAI-19}},
+   publisher = {International Joint Conferences on Artificial Intelligence Organization},
+   pages     = {2187--2194},
+   year      = {2019},
+   month     = {7},
+   doi       = {10.24963/ijcai.2019/303},
+   url       = {https://doi.org/10.24963/ijcai.2019/303},
 }
 ```
